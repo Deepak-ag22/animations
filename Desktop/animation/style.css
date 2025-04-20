@@ -1,0 +1,500 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Fun font */
+    margin: 0;
+    padding: 0;
+    background-color: #ede7f6; /* Changed to Light purple base */
+    /* Removed polka dot pattern */
+    /* background-image: radial-gradient(rgba(233, 30, 99, 0.1) 1px, transparent 1px); */
+    /* background-size: 15px 15px; */
+    color: #4a148c; /* Deep purple text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative; /* Needed for absolute positioning of shapes */
+    overflow: hidden; /* Hide shapes overflowing the viewport */
+}
+
+/* Styles for Animated Background Shapes */
+.background-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Behind the main container */
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%; /* Make them circular */
+    opacity: 0.5; /* Increased base opacity */
+    animation: float 18s infinite linear; /* Slightly faster base duration */
+    will-change: transform, opacity; /* Optimization hint */
+}
+
+.text-shape {
+    border-radius: 0;
+    background-color: transparent;
+    font-size: 1.5em; /* Adjust size as needed */
+    font-weight: bold;
+    color: rgba(74, 20, 140, 0.5); /* Increased alpha for Faint purple text */
+    /* Override other shape styles if necessary */
+    width: auto;
+    height: auto;
+}
+
+.shape1 {
+    width: 80px;
+    height: 80px;
+    background-color: #e1bee7; /* Light purple */
+    top: 10%;
+    left: 15%;
+    animation-duration: 25s;
+}
+
+.shape2 {
+    width: 50px;
+    height: 50px;
+    background-color: #f8bbd0; /* Light pink */
+    top: 30%;
+    right: 20%;
+    animation-duration: 18s;
+    animation-delay: 3s;
+}
+
+.shape3 {
+    width: 100px;
+    height: 100px;
+    background-color: #e1bee7; /* Light purple */
+    bottom: 15%;
+    left: 25%;
+    animation-duration: 22s;
+    animation-delay: 1s;
+}
+
+.shape4 {
+    width: 60px;
+    height: 60px;
+    background-color: #f8bbd0; /* Light pink */
+    bottom: 30%;
+    right: 10%;
+    animation-duration: 20s;
+    animation-delay: 5s;
+}
+
+.shape5 {
+    width: 40px;
+    height: 40px;
+    background-color: #e91e63; /* Brighter pink accent */
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-duration: 15s;
+    animation-delay: 2s;
+}
+
+/* Positioning for Text Shapes */
+.text1 { /* Happy */
+    top: 20%;
+    left: 30%;
+    animation-duration: 20s;
+    animation-delay: 0.5s;
+}
+
+.text2 { /* Birthday */
+    top: 60%;
+    right: 15%;
+    font-size: 1.8em; /* Make 'Birthday' slightly larger */
+    animation-duration: 24s;
+    animation-delay: 2.5s;
+}
+
+.text3 { /* Zara! */
+    bottom: 25%;
+    left: 10%;
+    color: rgba(233, 30, 99, 0.5); /* Increased alpha for Faint pink text */
+    font-size: 2em; /* Make name larger */
+    animation-duration: 19s;
+    animation-delay: 4s;
+}
+
+.text4 { /* Party Popper */
+    top: 75%;
+    left: 70%;
+    font-size: 2.5em;
+    animation-duration: 16s;
+    animation-delay: 1.5s;
+    background-color: transparent !important; /* Ensure no background */
+    border-radius: 0 !important; /* Ensure no radius */
+}
+
+.container {
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(74, 20, 140, 0.2); /* Purple shadow */
+    text-align: center;
+    max-width: 90%;
+    width: 400px; /* Max width for larger mobile/small tablets */
+    box-sizing: border-box;
+    overflow-y: auto; /* Allow scroll if content overflows */
+    max-height: 95vh;
+    background: linear-gradient(135deg, #ffdde1 0%, #ee9ca7 100%); /* Slightly different pink gradient for container */
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    color: #4a148c; /* Ensure text color is set here too if needed */
+    position: relative; /* Ensure container is above background shapes */
+    z-index: 1;
+}
+
+header h1 {
+    color: #e91e63; /* Bright pink */
+    margin-bottom: 10px;
+    font-size: 2.5em; /* Larger heading */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+}
+
+header p {
+    font-size: 1.1em;
+    color: #8e24aa; /* Medium purple */
+}
+
+.wishes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.wish-item {
+    background: linear-gradient(135deg, #f8bbd0, #e1bee7); /* Pink to purple gradient */
+    padding: 20px;
+    border-radius: 50%; /* Circular items */
+    font-size: 2.5em; /* Larger emoji */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1 / 1; /* Maintain circle shape */
+}
+
+.wish-item:hover {
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: 0 8px 20px rgba(74, 20, 140, 0.3);
+}
+
+button {
+    background-color: #e91e63; /* Bright pink */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+button:hover {
+    background-color: #c2185b; /* Darker pink */
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+    animation: fadeIn 0.5s ease;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #fff1ff, #e3f2fd); /* Light pink/blue */
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 30px;
+    border: 1px solid #e1bee7; /* Light purple border */
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    position: relative;
+    animation: slideIn 0.5s ease;
+    text-align: center;
+}
+
+.close-btn {
+    color: #e91e63;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #c2185b;
+    text-decoration: none;
+}
+
+#wishContent img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+#wishContent p {
+    font-size: 1.2em;
+    color: #6a1b9a; /* Darker purple for contrast */
+    margin-top: 15px;
+}
+
+/* Gift Card Section Styles */
+.gift-card-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 182, 193, 0.95); /* Semi-transparent pink overlay */
+    z-index: 1001; /* Above modal */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    visibility: visible;
+}
+
+.gift-card-section.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.gift-card-section h2 {
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    margin-bottom: 20px;
+}
+
+.book {
+    width: 90%;
+    max-width: 450px; /* Slightly wider for book */
+    height: 60vh; /* Adjust height */
+    max-height: 500px;
+    position: relative;
+    perspective: 1500px; /* For 3D effect */
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Space out content */
+    align-items: center;
+    text-align: center;
+    transform-origin: left center; /* Flip from the left spine */
+    transition: transform 1s ease-in-out, z-index 0.5s step-end 0.5s; /* Timing for flip */
+    backface-visibility: hidden; /* Hide back during flip */
+    overflow-y: auto; /* Scroll if content overflows page */
+    transform-style: preserve-3d; /* Necessary for children in 3D space */
+    z-index: 1; /* Default stacking */
+    border: 5px solid #e1bee7; /* Light purple border */
+}
+
+.page img {
+    max-width: 70%; /* Adjust image size */
+    max-height: 50%; /* Adjust image size */
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    object-fit: contain; /* Ensure image fits without distortion */
+}
+
+.page p {
+    font-size: 1em;
+    color: #6a1b9a;
+    margin-top: 10px;
+    flex-grow: 1; /* Allow text to take remaining space */
+}
+
+/* Page Flip */
+.page.flipped {
+    transform: rotateY(-180deg);
+    z-index: 0; /* Send to back when flipped */
+    transition: transform 1s ease-in-out, z-index 0.5s step-start;
+}
+
+.page:not(:first-child) {
+    transform: rotateY(180deg); /* Initially hide back pages */
+    z-index: 0;
+}
+
+.page.active {
+    z-index: 10; /* Bring current page to front */
+}
+
+.navigation {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+#closeGiftCardBtn {
+     margin-top: 15px;
+     background-color: #fff;
+     color: #e91e63;
+     font-weight: bold;
+}
+#closeGiftCardBtn:hover {
+    background-color: #fce4ec; /* Very light pink */
+}
+
+/* Animations */
+@keyframes float {
+    0% {
+        transform: translateY(0px) rotate(0deg) scale(1);
+        opacity: 0.4; /* Increased start/end opacity */
+    }
+    50% {
+        transform: translateY(-35px) rotate(180deg) scale(1.05);
+        opacity: 0.7; /* Increased mid-way opacity */
+    }
+    100% {
+        transform: translateY(0px) rotate(360deg) scale(1);
+        opacity: 0.4; /* Increased start/end opacity */
+    }
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pop {
+    0% { transform: scale(0.8); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px 15px; /* Reduced top/bottom padding */
+        max-width: 95%;
+    }
+
+    /* Make background shapes/text larger and more visible on mobile */
+    .shape {
+       transform: scale(1.2); /* Make circles slightly bigger */
+       opacity: 0.8; /* Significantly more opaque */
+    }
+
+    .text-shape {
+        font-size: 1.8em; /* Increase base text size */
+        color: rgba(74, 20, 140, 0.8); /* Significantly more opaque text */
+    }
+    .text2 { font-size: 2.1em; } /* Adjust specific text sizes */
+    .text3 {
+        font-size: 2.3em;
+        color: rgba(233, 30, 99, 0.8); /* Significantly more opaque text */
+    }
+    .text4 { font-size: 2.8em; }
+
+    header h1 {
+        font-size: 2em;
+        margin-bottom: 5px; /* Reduce space below header */
+    }
+
+    .wishes-grid {
+        gap: 10px; /* Slightly smaller gap */
+        margin: 15px 0; /* Reduced top/bottom margin */
+    }
+
+    .wish-item {
+        font-size: 2em;
+        padding: 15px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    .modal-content {
+        margin: 20% auto;
+        width: 90%;
+        padding: 20px;
+    }
+
+     .book {
+        height: 65vh; /* Adjust height for mobile */
+     }
+
+    .page p {
+        font-size: 0.9em;
+    }
+     .page img {
+         max-width: 80%;
+         max-height: 45%;
+     }
+}
+
+@media (max-width: 400px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+     header p {
+        font-size: 1em;
+    }
+    .wishes-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on small screens */
+        gap: 10px;
+    }
+    .wish-item {
+        font-size: 1.8em;
+        padding: 12px;
+    }
+} 

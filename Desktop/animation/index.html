@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Zara!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Add container for background shapes -->
+    <div class="background-shapes">
+        <div class="shape shape1"></div>
+        <div class="shape shape2"></div>
+        <div class="shape shape3"></div>
+        <div class="shape shape4"></div>
+        <div class="shape shape5"></div>
+        <!-- Add Text Shapes -->
+        <div class="shape text-shape text1">Happy</div>
+        <div class="shape text-shape text2">Birthday</div>
+        <div class="shape text-shape text3">Zara!</div>
+        <div class="shape text-shape text4">🎉</div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Happy Birthday, Zara!</h1>
+            <p>🎉 Click on the hearts below for special wishes! 🎉</p>
+        </header>
+
+        <main>
+            <div class="wishes-grid">
+                <div class="wish-item" data-wish="1">💖</div>
+                <div class="wish-item" data-wish="2">💜</div>
+                <div class="wish-item" data-wish="3">💖</div>
+                <div class="wish-item" data-wish="4">💜</div>
+                <div class="wish-item" data-wish="5">💖</div>
+                <div class="wish-item" data-wish="6">💜</div>
+            </div>
+
+            <button id="giftCardBtn">Open Your Gift Card!</button>
+        </main>
+
+        <!-- Pop-up Modal Structure -->
+        <div id="wishModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <div id="wishContent">
+                    <!-- Wish content will be loaded here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Gift Card Section (Initially Hidden) -->
+        <section id="giftCardSection" class="gift-card-section hidden">
+             <h2>Your Special Gift Card</h2>
+             <div class="book">
+                 <div class="page" id="page1">
+                     <img src="images/Image1.jpg" alt="Memory 1">
+                     <p>Dearest Zara, wishing you the happiest of birthdays! May your day be filled with joy and laughter.</p>
+                 </div>
+                 <div class="page" id="page2">
+                     <p>Thinking of all the fun times we've shared. You bring so much light into the world!</p>
+                     <img src="images/Image2.jpg" alt="Memory 2">
+                 </div>
+                 <div class="page" id="page3">
+                    <img src="images/Image3.jpg" alt="Memory 3">
+                    <p>May this year bring you endless blessings, success, and happiness. Cheers to you!</p>
+                 </div>
+                 <!-- Add more pages as needed -->
+             </div>
+             <div class="navigation">
+                <button id="prevPage" disabled>Previous</button>
+                <button id="nextPage">Next</button>
+            </div>
+            <button id="closeGiftCardBtn">Close Gift Card</button>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
